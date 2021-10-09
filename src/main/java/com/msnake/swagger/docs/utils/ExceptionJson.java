@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ExceptionJSONInfo {
+public class ExceptionJson {
     /**
      * Класс исключения.
      */
@@ -29,7 +29,7 @@ public class ExceptionJSONInfo {
      *
      * @param throwable исключение
      */
-    public ExceptionJSONInfo(Throwable throwable) {
+    public ExceptionJson(Throwable throwable) {
         message = throwable.toString();
         exception = throwable.getClass().getName();
         stackTrace = throwable.getStackTrace();

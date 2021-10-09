@@ -32,14 +32,6 @@ public class SwaggerConfigDefault {
         return "SWAGGER-DOCS REST API";
     }
 
-    private String getDescription() {
-        return "Project example for joker2021";
-    }
-
-    private String getAppVersion() {
-        return "1.0.1";
-    }
-
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -55,9 +47,6 @@ public class SwaggerConfigDefault {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title(getTitle())
-                .description(getDescription())
-                .version(getAppVersion())
                 .build();
     }
-
 }

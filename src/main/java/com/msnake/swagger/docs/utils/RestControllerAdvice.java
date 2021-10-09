@@ -21,9 +21,9 @@ public class RestControllerAdvice {
      * @return структура, описывающая исключение, http-статус
      */
     @ExceptionHandler(SwaggerDocsExampleException.class)
-    public ResponseEntity<ExceptionJSONInfo> handleException(SwaggerDocsExampleException swaggerDocsExampleException) {
+    public ResponseEntity<ExceptionJson> handleException(SwaggerDocsExampleException swaggerDocsExampleException) {
         log.error(swaggerDocsExampleException.toString(), swaggerDocsExampleException);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionJSONInfo(swaggerDocsExampleException));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionJson(swaggerDocsExampleException));
     }
 
     /**
@@ -33,9 +33,9 @@ public class RestControllerAdvice {
      * @return структура, описывающая исключение, http-статус
      */
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<ExceptionJSONInfo> handleException(NotFoundException notFoundException) {
+    public ResponseEntity<ExceptionJson> handleException(NotFoundException notFoundException) {
         log.error(notFoundException.toString(), notFoundException);
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionJSONInfo(notFoundException));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionJson(notFoundException));
     }
 
     /**
@@ -45,8 +45,8 @@ public class RestControllerAdvice {
      * @return структура, описывающая исключение, http-статус
      */
     @ExceptionHandler(Throwable.class)
-    public ResponseEntity<ExceptionJSONInfo> handleException(Throwable throwable) {
+    public ResponseEntity<ExceptionJson> handleException(Throwable throwable) {
         log.error(throwable.toString(), throwable);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionJSONInfo(throwable));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionJson(throwable));
     }
 }
