@@ -1,0 +1,29 @@
+#tomcat
+server:
+  port: 8080
+  servlet:
+    contextPath: /swagger-docs
+  error:
+    include-message: always
+
+
+logging:
+  level:
+    com.msnake.swagger.docs: info
+    org.springframework: error
+    org.springframework.boot.web.embedded.tomcat.TomcatWebServer: error
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ 'health', 'info', 'logfile', 'refresh', 'env', 'loggers', 'configprops', 'metrics', 'prometheus' ]
+
+spring:
+  application:
+    name: swagger-docs
+
+application:
+  type-doc:
+    advanced: true

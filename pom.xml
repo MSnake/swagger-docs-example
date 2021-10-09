@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.msnake.swagger.docs</groupId>
     <artifactId>swagger-docs-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <name>swagger-docs-example</name>
     <description>Project example for joker2021 about swagger docs capabilities</description>
